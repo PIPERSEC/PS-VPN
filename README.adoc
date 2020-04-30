@@ -4,7 +4,7 @@ Configure a Virtual Private Network (VPN) using Windows PowerShell
 == Planning:
 Resources: https://
 
-The VPN is used to mitigate unauthorized communication disclosure. Hosting an on premises VPN server will insure the integrity of network communications between client and server.  
+The VPN is used to mitigate... Blah, Blah, Blah... Hosting an on premises VPN server will insure the integrity of network communications between client and server.  
 
 === Gather Facts
    * ISP Addresses
