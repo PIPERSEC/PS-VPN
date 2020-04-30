@@ -42,11 +42,11 @@ The VPN is used to mitigate... Blah, Blah, Blah... Hosting an on premises VPN se
 
 
 == Execution:
-Resources: https://github.com/hwdsl2/setup-ipsec-vpn
+VPN Server Resources: https://github.com/hwdsl2/setup-ipsec-vpn
 
 === Gather Facts (Client)
     $ api.ipify.org
-	$ netsh interface ipv4 show route
+    $ netsh interface ipv4 show route
 
 === Create Connection (Client)
     $ set-VpnConnection -Name ">NAME<" -ServerAddress ">ADDRESS<" -TunnelType L2tp -AllUserConnection -L2tpPsk ">SHAREDKEY<" -AuthenticationMethod MSCHAPv2 -Encryption Optional -SplitTunneling $True -Force
