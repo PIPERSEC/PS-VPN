@@ -27,7 +27,7 @@ Resources: https://
 
 === Gather Facts (Client)
     $ api.ipify.org
-	$ netsh interface ipv4 show route
+    $ netsh interface ipv4 show route
 
 === Create Connection (Client)
     $ set-VpnConnection -Name ">NAME<" -ServerAddress ">ADDRESS<" -TunnelType L2tp -AllUserConnection -L2tpPsk ">SHAREDKEY<" -AuthenticationMethod MSCHAPv2 -Encryption Optional -SplitTunneling $True -Force
