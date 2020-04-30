@@ -5,33 +5,33 @@ Configure a Virtual Private Network (VPN) using Windows PowerShell
 Resources: https://
 The VPN is used to mitigate unauthorized communication disclosure. Hosting an on premises VPN server will insure the integrity of network communications between client and server.  
 
- * Gather Facts
-   - ISP Addresses
+=== Gather Facts
+   * ISP Addresses
 		- Dynamic/Static?
 		- Hide communications from ISP or Public networks?
-   - Networking Environment
+   * Networking Environment
 		- Concentrator or Mesh? A conventional VPN uses a star topology, where all traffic flows through a concentrator. This repository will document a conventional VPN.
 		- Enable VPN L2TP Passthough (Router) 
-   - Server Resources
+   * Server Resources
 		- Linode
 		- AWS
-   - Accounts
+   * Accounts
 		- Radius
-   - Authentication
+   * Authentication
 		- PAP
 		- Chapv2
 		- MS-Chapv2
-   - EncryptionLevel (Optional/Required)
+   * EncryptionLevel (Optional/Required)
 		- TunnelType
-   - Use case (Full/Split)
+   * Use case (Full/Split)
 		- Full 
- * PowerShell Syntax
+=== PowerShell Syntax
    - Server: Create Radius Server
    - Server: Users and Groups
    - Server: Shared Secret
    - Client: Create Connection
    - Client: Create Routes
- * Security Considerations
+=== Security Considerations
    - Use MS-Chapv2
    - Always on VPN
 
@@ -41,7 +41,7 @@ Resources: https://
 
 === Gather Facts (Client)
     $ api.ipify.org
-    $ netsh interface ipv4 show route
+	$ netsh interface ipv4 show route
 
 === Create Connection (Client)
     $ set-VpnConnection -Name ">NAME<" -ServerAddress ">ADDRESS<" -TunnelType L2tp -AllUserConnection -L2tpPsk ">SHAREDKEY<" -AuthenticationMethod MSCHAPv2 -Encryption Optional -SplitTunneling $True -Force
