@@ -1,2 +1,2 @@
 # PS-VPN
-Configure Virtual Private Network (VPN) settings via Windows PowerShell
+Configure a Virtual Private Network (VPN) using Windows PowerShell
