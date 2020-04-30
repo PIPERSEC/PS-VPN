@@ -3,6 +3,7 @@ Configure a Virtual Private Network (VPN) using Windows PowerShell
 
 == Planning:
 Resources: https://
+
 The VPN is used to mitigate unauthorized communication disclosure. Hosting an on premises VPN server will insure the integrity of network communications between client and server.  
 
 === Gather Facts
@@ -24,27 +25,35 @@ The VPN is used to mitigate unauthorized communication disclosure. Hosting an on
    * EncryptionLevel (Optional/Required)
 		- TunnelType
    * Use case (Full/Split)
-		- Full 
+   	- Full
+	
 === PowerShell Syntax
+
    - Server: Create Radius Server
    - Server: Users and Groups
    - Server: Shared Secret
    - Client: Create Connection
    - Client: Create Routes
+   
 === Security Considerations
+   
    - Use MS-Chapv2
    - Always on VPN
 
 
 == Execution:
+
 Resources: https://
 
 === Gather Facts (Client)
+
     $ api.ipify.org
-	$ netsh interface ipv4 show route
+    $ netsh interface ipv4 show route
 
 === Create Connection (Client)
+
     $ set-VpnConnection -Name ">NAME<" -ServerAddress ">ADDRESS<" -TunnelType L2tp -AllUserConnection -L2tpPsk ">SHAREDKEY<" -AuthenticationMethod MSCHAPv2 -Encryption Optional -SplitTunneling $True -Force
 
 === Route Edits for Split (Client)
+
     $ netsh interface ipv4 add route 192.168.1.0/24 ">NAME<"
